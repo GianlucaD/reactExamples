@@ -18,3 +18,6 @@ Props Example
 call http://localhost:3000/products/apple 
 apple is the product id
 
+## Example 5: ##
+
+Nested Routes
