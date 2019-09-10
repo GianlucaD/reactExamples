@@ -12,4 +12,9 @@ Bind **this** to a Class Method
 
 Router Example
 
+## Example 4: ##
+
+Props Example
+call http://localhost:3000/products/apple 
+apple is the product id
 
