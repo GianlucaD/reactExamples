@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import PostsList from './list';
 import Single from './single';
 
 class PostsPage extends Component {
     render() {
         return (
-            <Switch>
-                <Route exact path="/posts" component={PostsList} />
-                <Route exact path="/posts/:id" component={Single} />
-            </Switch>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/posts" component={PostsList} />
+                    <Route exact path="/posts/:id" component={Single} />
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
