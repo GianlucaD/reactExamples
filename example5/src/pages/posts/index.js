@@ -11,7 +11,6 @@ class PostsPage extends Component {
                 <Route exact path="/posts/:id" component={Single} />
             </Switch>
         )
-
     }
 }
 

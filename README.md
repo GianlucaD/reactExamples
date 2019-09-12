@@ -21,3 +21,7 @@ apple is the product id
 ## Example 5: ##
 
 Nested Routes
+
+## Example 6: ##
+
+PropTypes
