@@ -13,7 +13,6 @@ class PostsPage extends Component {
                 </Switch>
             </BrowserRouter>
         )
-
     }
 }
 
