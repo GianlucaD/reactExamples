@@ -1,5 +1,6 @@
 import React from 'react';
 import Users from './components/Users';
+import UsersFunc from './components/UsersFunc';
 
 function App() {
   return (
@@ -7,8 +8,16 @@ function App() {
       <header className="App-header">
       </header>
       <h1>here are the users</h1>
-      <Users />
-      
+      <div class="wrapper">
+        <div class="box a">
+          <h2>Functional Component</h2>
+          <UsersFunc />
+        </div>
+        <div class="box b">
+          <h2>Class Component</h2>
+          <Users />
+        </div>
+      </div>
     </div>
   );
 }
