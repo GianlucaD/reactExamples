@@ -36,4 +36,4 @@ actually open...
 
 ## Example 9: ##
 
-Axios 
+Axios with functional and class Component
