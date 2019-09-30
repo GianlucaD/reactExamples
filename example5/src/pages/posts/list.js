@@ -22,10 +22,15 @@ class PostsList extends Component {
     }
     
     componentDidMount() {
+        console.log("componentDidMount");
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
             .then(json => this.setState( {posts: json}));
             console.log("posts:", this.state.posts);
+    }
+
+    componentWillUnmount(){
+        console.log("componentDidMount");
     }
 }
 
