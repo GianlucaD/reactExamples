@@ -32,7 +32,7 @@ PropTypes
 
 ## Example 8: ##
 
-actually open...
+useEffect
 
 ## Example 9: ##
 
