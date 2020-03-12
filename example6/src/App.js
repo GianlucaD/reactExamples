@@ -1,16 +1,14 @@
-import React from 'react';
-import MyContextProvider from './contexts/MyContext';
-import Navbar from './components/Navbar';
+import React from "react";
+import LoginContextProvider from "./contexts/LoginContext";
+import Navbar from "./components/Navbar";
 
 function App() {
-
-  
   return (
     <div className="App">
-      <MyContextProvider>
+      <LoginContextProvider>
         <Navbar />
         <h1>i'm here in my context</h1>
-      </MyContextProvider>
+      </LoginContextProvider>
     </div>
   );
 }
