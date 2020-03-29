@@ -37,3 +37,7 @@ useEffect
 ## Example 9: ##
 
 Axios with functional and class Component
+
+## formik: ##
+
+A fromik example (without YUP)
