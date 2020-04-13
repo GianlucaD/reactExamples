@@ -1,7 +1,9 @@
 My own React examples
+
 # Available Examples #
 
 ## Example 1: ##
+
 Difference between Component Class and Functional Component
 
 ## Example 2: ##
@@ -41,3 +43,4 @@ Axios with functional and class Component
 ## formik: ##
 
 A fromik example (without YUP)
+
