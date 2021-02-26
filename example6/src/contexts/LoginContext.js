@@ -1,18 +1,18 @@
 import React, { createContext, useState } from "react";
 
-export const LoginContext = createContext();
+export const BasketContext = createContext();
 
-const LoginContextProvider = props => {
+const BasketContextProvider = props => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const login = () => {
     setIsAuthorized(true);
   };
 
   return (
-    <LoginContext.Provider value={{ isAuthorized, login }}>
+    <BasketContext.Provider value={{ isAuthorized, login }}>
       {props.children}
-    </LoginContext.Provider>
+    </BasketContext.Provider>
   );
 };
 
-export default LoginContextProvider;
+export default BasketContextProvider;
