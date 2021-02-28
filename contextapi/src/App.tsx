@@ -1,19 +1,25 @@
-import React, { useContext } from "react";
+import React, { MouseEvent, useContext } from "react";
 import "./App.css";
-import { BasketCTX, BasketProvider } from "./context/BasketProvider";
-import Products from "./context/Products";
+import { BasketCTX } from "./context/BasketProvider";
+import Product from "./context/Product";
 
 function App() {
-  const {basket} = useContext(BasketCTX);
+  const { basket, add } = useContext(BasketCTX);
+
+  const addToBasket = (e: MouseEvent) => {
+    const newId = Math.floor(Math.random() * Math.floor(1000));
+    add({id: newId, name: "product" + newId});
+  }
   return (
     <div className="App">
       <h1>Hello in my app</h1>
-        <div>
-          {basket &&
-            basket.map((product: Products) => {
-              return <h1>{product.name}</h1>;
-            })}
-        </div>
+      <div>
+        {basket &&
+          basket.map((product: Product) => {
+            return <h1>{product.name}</h1>;
+          })}
+      </div>
+      <button onClick={addToBasket}>add</button>
     </div>
   );
 }
