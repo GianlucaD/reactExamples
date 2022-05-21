@@ -1,36 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+
+import "./App.css";
 
 function App() {
+  const [todo, setTodo] = useState({});
+  const [post, setPost] = useState({});
 
- function getData() {
-   fetch("https://jsonplaceholder.typicode.com/todos/1")
-     .then((response) => response.json())
-     .then((json) => {
-       console.log("response:", json);
-       return json;
-     });
-     
- }
+  const getPost = async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    const json = await res.json();
+    setPost(json);
+  };
 
- 
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then((response) => response.json())
+      .then((json) => {
+        setTodo(json);
+      });
+    getPost();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {JSON.stringify(getData())}
-        </a>
-      </header>
+      <p>Todo: {JSON.stringify(todo)}</p>
+      <p>Post: {JSON.stringify(post)}</p>
     </div>
   );
 }
