@@ -5,7 +5,7 @@ function LandingPage() {
   return (
     <div>
       <h1>This is the Landing page</h1>
-      <Link to="about">About Page</Link>
+      <Link to="about">go to About Page</Link>
     </div>
   );
 }
