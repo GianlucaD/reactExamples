@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
@@ -9,6 +8,7 @@ function App() {
       <div>
         <Formik
           initialValues={{ name: "", email: "" }}
+          // begin validation
           validate={(values) => {
             const errors: { [field: string]: string } = {};
 
@@ -29,6 +29,7 @@ function App() {
             }
             return errors;
           }}
+          // end validation
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
