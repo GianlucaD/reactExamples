@@ -1,17 +1,15 @@
 import React from "react";
-import "./App.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
-function App() {
+function LoginForm() {
   return (
-    <div className="App">
+    <div>
       <div>
         <Formik
-          initialValues={{ name: "", email: "" }}
+          initialValues={{ email: "", password: "" }}
           // begin validation
           validate={(values) => {
             const errors: { [field: string]: string } = {};
-
             //check email
             if (!values.email) {
               errors.email = "Email Required";
@@ -23,9 +21,9 @@ function App() {
               errors.email = "keine Noser adresse";
             }
 
-            //check name
-            if (!values.name) {
-              errors.name = "Required";
+            //check password
+            if (!values.password) {
+              errors.password = "Required";
             }
             return errors;
           }}
@@ -39,17 +37,18 @@ function App() {
         >
           {({ isSubmitting }) => (
             <Form>
-              <label>Name</label>
-              <Field type="text" name="name" />
-              <ErrorMessage
-                name="name"
-                component="div"
-                className="Errormessage"
-              />
+              <h1>LoginForm</h1>
               <label>Email</label>
               <Field type="email" name="email" />
               <ErrorMessage
                 name="email"
+                component="div"
+                className="Errormessage"
+              />
+              <label>Password</label>
+              <Field type="password" name="password" />
+              <ErrorMessage
+                name="password"
                 component="div"
                 className="Errormessage"
               />
@@ -64,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginForm;
