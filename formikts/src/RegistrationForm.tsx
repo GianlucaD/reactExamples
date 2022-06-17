@@ -23,6 +23,7 @@ export default function RegistrationForm() {
           name="firstName"
           type="text"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.firstName}
         />
       </div>
@@ -33,6 +34,7 @@ export default function RegistrationForm() {
           name="lastName"
           type="text"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.lastName}
         />
       </div>
