@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from "react";
+import { useParams } from "react-router-dom";
 
-class Single extends Component {
-    render() {
-        return (
-            <div>
-                <h1>single post</h1>
-            </div>
-            )
-    }
-}
+export const Single = () => {
+  const params = useParams();
+  return (
+    <div>
+      <h1>single post</h1>
+      <p>ID: {params.id}</p>
+    </div>
+  );
+};
 
 export default Single;
