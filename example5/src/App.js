@@ -1,16 +1,21 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import LandingPage from './pages/home';
-import AboutPage from './pages/about';
-import PostsPage from './pages/posts';
+import React from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import LandingPage from "./pages/home";
+import AboutPage from "./pages/about";
+import PostsList from "./pages/posts/list";
+import Single from "./pages/posts/single";
 
 function App() {
   return (
-      <Switch>
-        <Route exact path={"/"} component={LandingPage} />
-        <Route exact path={"/about"} component={AboutPage} />
-        <Route path={"/posts"} component={PostsPage} />
-      </Switch>
+    <BrowserRouter>
+      <Routes>
+        <Route path={"/"} element={<LandingPage />} />
+        <Route path={"/about"} element={<AboutPage />} />
+        <Route path={"/posts"} element={<PostsList />}>
+          <Route exact path=":id" element={<Single />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
