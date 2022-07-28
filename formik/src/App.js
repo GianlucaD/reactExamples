@@ -9,15 +9,15 @@ function App() {
       <div>
         <Formik
           initialValues={{ name: "", email: "" }}
-          validate={values =>{
+          validate={(values) => {
             console.log("hello");
             const errors = {};
-            if(values.name.length < 3){
+            if (values.name.length < 3) {
               errors.name = "Name zu kurz";
             }
             return errors;
           }}
-          onSubmit={(values) => {
+          onSubmit={(values, { isSubmitting }) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
             }, 4000);
@@ -39,7 +39,9 @@ function App() {
                 component="div"
                 style={{ color: "red" }}
               />
-              <button type="submit" disabled={props.isSubmitting}>Submit</button>
+              <button type="submit" disabled={props.isSubmitting}>
+                Submit
+              </button>
             </Form>
           )}
         </Formik>

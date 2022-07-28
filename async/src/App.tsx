@@ -18,6 +18,9 @@ function App() {
       .then((response) => response.json())
       .then((json) => {
         setTodo(json);
+      })
+      .catch((error) => {
+        console.error("Error", error);
       });
     console.log("todo", todo);
   };

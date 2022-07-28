@@ -44,3 +44,7 @@ Axios with functional and class Component
 
 A fromik example (without YUP)
 
+## formikts: ##
+
+A fromik example with typescript
+
